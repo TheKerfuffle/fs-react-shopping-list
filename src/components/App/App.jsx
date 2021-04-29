@@ -1,9 +1,15 @@
-import React, {useState} from 'react';
-import axios from 'axios';
-import Header from '../Header/Header.jsx'
 import ItemForm from '../ItemForm/ItemForm.jsx';
-import './App.css';
+import React from 'react';
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
+import Header from '../Header/Header.jsx'
+import Dashboard from '../Dashboard/Dashboard'
 
+import './App.css';
+import getShoppingList from '../ShoppingList/ShoppingList.jsx';
+
+useEffect(() => {
+    getShoppingList()
+}, [])
 
 function App() {
     const [name, setName] = useState('');
@@ -46,6 +52,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
+
                 <ItemForm
                     name={name}
                     setName={setName}
@@ -55,6 +62,10 @@ function App() {
                     setUnit={setUnit}
                     handleSubmit={handleSubmit}
                 />
+                <Dashboard />
+                <ShoppingList />
+
+                <p>Under Construction...</p>
             </main>
         </div>
     );
