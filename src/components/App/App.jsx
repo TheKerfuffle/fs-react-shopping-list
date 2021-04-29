@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import ItemForm from '../ItemForm/ItemForm.jsx';
 import './App.css';
@@ -11,14 +11,16 @@ function App() {
     const [unit, setUnit] = useState('');
 
     const addItem = () => {
-        // fact checking
-        console.log('newItem is:', newItem);
+
         // wrapping new item into an object
         const itemToAdd = {
             name: name,
-            quantity: quantity,
+            quantity: Number(quantity),
             unit: unit,
         } // end itemToAdd
+
+        // fact checking
+        console.log('newItem is:', itemToAdd);
 
         //post route for adding new item
         axios({
