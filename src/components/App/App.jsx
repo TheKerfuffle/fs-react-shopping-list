@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../Header/Header.jsx'
+import Dashboard from '../Dashboard/Dashboard'
 import './App.css';
 
 
@@ -9,6 +10,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                <Dashboard />
                 <p>Under Construction...</p>
             </main>
         </div>
