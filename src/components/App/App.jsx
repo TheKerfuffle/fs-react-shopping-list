@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
-import Header from '../Header/Header.jsx';
+import Header from '../Header/Header.jsx'
+import Dashboard from '../Dashboard/Dashboard'
+
 import './App.css';
 import getShoppingList from '../ShoppingList/ShoppingList.jsx';
 
@@ -13,7 +16,10 @@ function App() {
         <div className="App">
             <Header />
             <main>
+
+                <Dashboard />
                 <ShoppingList />
+
                 <p>Under Construction...</p>
             </main>
         </div>
