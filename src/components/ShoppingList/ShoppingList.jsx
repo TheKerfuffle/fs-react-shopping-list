@@ -10,12 +10,12 @@ const getShoppingList = () => {
     });
 }
 
-axios.post('/list')
+axios.post('/list', {name: newNameInput, quantity: newQuantityInput, unit: newUnitInput})
 .then( response => {
     console.log('Back successfully');
     getShoppingList();
     // // clear inputs
-    //setItemInput('');
+    //setNameInput('');
     //setQuantityInput('');
     //setUnitInput('');
 })
