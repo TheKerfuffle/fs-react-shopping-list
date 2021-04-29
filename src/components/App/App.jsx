@@ -1,5 +1,5 @@
 import ItemForm from '../ItemForm/ItemForm.jsx';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import Header from '../Header/Header.jsx'
 import Dashboard from '../Dashboard/Dashboard'
@@ -7,14 +7,16 @@ import Dashboard from '../Dashboard/Dashboard'
 import './App.css';
 import getShoppingList from '../ShoppingList/ShoppingList.jsx';
 
-useEffect(() => {
-    getShoppingList()
-}, [])
+
 
 function App() {
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
+
+    useEffect(() => {
+        getShoppingList()
+    }, [])
 
     const addItem = () => {
 
