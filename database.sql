@@ -5,7 +5,8 @@ CREATE TABLE shopping (
 	id SERIAL PRIMARY KEY,
 	name varchar(80),
 	quantity numeric(12,2),
-	unit varchar(50)
+	unit varchar(50),
+	purchased BOOLEAN DEFAULT FALSE
 );
 
 INSERT INTO "shopping" ("name", "quantity", "unit") 
