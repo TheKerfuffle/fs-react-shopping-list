@@ -9,5 +9,15 @@ CREATE TABLE shopping (
 	purchased BOOLEAN DEFAULT FALSE
 );
 
+SELECT * FROM "shopping";
+
+DROP TABLE "shopping";
+
+DELETE FROM "shopping" *;
+
+UPDATE "shopping"
+SET "purchased"=FALSE
+WHERE "purchased"=TRUE;
+
 INSERT INTO "shopping" ("name", "quantity", "unit") 
 VALUES ('Milk', 1, 'Gallon'),('Eggs' ,1 ,'Dozen'),('Cake',2,'13x9'),('Coffee', 1, 'Bag');
