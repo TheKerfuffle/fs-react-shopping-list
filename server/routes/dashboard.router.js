@@ -15,7 +15,7 @@ dashboardRouter.delete('/', (req, res) => {
     })
 });
 
-dashboardRouter.delete('/', (req, res) => {
+dashboardRouter.put('/', (req, res) => {
     console.log("In RESET ALL request");
     let queryText = `UPDATE "shopping"
             SET "purchased"=FALSE
