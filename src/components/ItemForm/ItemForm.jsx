@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ItemForm.css';
 
 function ItemForm() {
     
@@ -54,7 +55,7 @@ function ItemForm() {
                 value={unit}
                 placeholder="Unit"
             />
-            <input type="submit" value="Save" />
+            <input id="save" type="submit" value="Save" />
         </form>
     );
 }

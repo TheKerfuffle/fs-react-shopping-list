@@ -1,3 +1,14 @@
 button {
     margin: 10px;
+    border: solid black 2px;
+    padding: .25rem;
+    background-color: white;
+    font-family: sans-serif;
+    font-size: large;
 }
+
+h3 {
+    font-size: xx-large;
+    padding-top: 2rem;
+}
+

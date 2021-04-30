@@ -26,7 +26,7 @@ function Dashboard(props) {
     return (
         <>
             <form>
-                <h3>Shopping List</h3>
+                <h3>Shopping List:</h3>
                 <button onClick={resetList}>Reset</button>
                 <button onClick={deleteList}>Clear</button>
             </form>
