@@ -27,6 +27,10 @@ function ItemForm({getShoppingList}) {
         })
             .then(response => {
                 console.log('response from server', response);
+                getShoppingList();
+                setName('');
+                setQuantity('');
+                setUnit('');
             })
             .catch(error => {
                 console.log('error sending newItem to server:', error);
