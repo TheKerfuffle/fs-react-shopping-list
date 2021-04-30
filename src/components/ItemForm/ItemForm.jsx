@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function ItemForm() {
+function ItemForm({getShoppingList}) {
     
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
-
-    
 
     const addItem = () => {
 
@@ -38,6 +37,7 @@ function ItemForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         addItem();
+        getShoppingList();
     } // end handleSubmit
 
     return (
