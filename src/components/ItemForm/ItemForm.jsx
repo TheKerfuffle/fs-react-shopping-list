@@ -6,9 +6,7 @@ function ItemForm() {
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
 
-    useEffect(() => {
-        getShoppingList()
-    }, [])
+    
 
     const addItem = () => {
 

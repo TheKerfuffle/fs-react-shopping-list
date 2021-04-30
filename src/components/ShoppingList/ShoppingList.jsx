@@ -1,16 +1,19 @@
-import axios from 'axios';
+import './ShoppingList.css';
 
-const getShoppingList = () => {
-    axios.get('/list')
-    .then((response) => {
-        console.log(response.data);
-        setShoppingList(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-        alert('Sorry, could not get shopping list.')
-    });
+function ShoppingList({shoppingList}) {
+    return (
+        <>
+
+                {shoppingList.map(item => (
+                    <div class="card">
+                    <p key={item.id}>{item.name}</p>
+                    <p>{item.quantity} {item.unit}</p>
+                    <button>Buy</button> <button>Remove</button>
+                    </div>
+                ))}
+
+        </>
+    )
 }
 
-
-export default getShoppingList;
+export default ShoppingList
