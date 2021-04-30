@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 // TODO - Add routes here...
 router.get('/', (req, res) => {
-    let queryText = 'SELECT * FROM "shopping";';
+    let queryText = 'SELECT * FROM "shopping" ORDER BY ("purchased","name");';
     pool.query(queryText)
         .then((result) => {
             res.send(result.rows);
