@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './ItemForm.css';
 
-function ItemForm() {
+import './ItemForm.css';
+import axios from 'axios';
+
+
+function ItemForm({getShoppingList}) {
     
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
-
-    
 
     const addItem = () => {
 
@@ -29,6 +30,10 @@ function ItemForm() {
         })
             .then(response => {
                 console.log('response from server', response);
+                getShoppingList();
+                setName('');
+                setQuantity('');
+                setUnit('');
             })
             .catch(error => {
                 console.log('error sending newItem to server:', error);
@@ -39,6 +44,7 @@ function ItemForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         addItem();
+        getShoppingList();
     } // end handleSubmit
 
     return (
