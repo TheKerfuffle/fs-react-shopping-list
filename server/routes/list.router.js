@@ -39,9 +39,9 @@ router.post('/', (req, res) => {
 //Setup PUT router to update changes
 router.put('/:id', (req, res) => {
     console.log('in /list PUT;', req.params.id);
-    const updatedList = req.body;
-    const sqlText = `Update "shopping" SET "purchased"=true WHERE id=$5;`;
-    pool.query(sqlText, [updatedList.name, updatedList.quantity, updatedList.unit, updatedList.purchased, req.params.id ])
+    let itemId = req.params.id;
+    const sqlText = `Update "shopping" SET "purchased"=true WHERE id=$1;`;
+    pool.query(sqlText, [itemId])
     .then((result) => {
         res.sendStatus(200);
     })
@@ -51,6 +51,20 @@ router.put('/:id', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+    let itemId = req.params.id;
+
+    const sqlText = `DELETE FROM "shopping" WHERE id=$1;`;
+
+    pool.query(sqlText, [itemId])
+        .then( result => {
+            res.sendStatus(200);
+        })
+        .catch( error => {
+            console.log(error);
+            res.sendStatus(500);
+        });
+})
 
 
 module.exports = router;

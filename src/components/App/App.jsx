@@ -38,7 +38,8 @@ function App() {
             <main>
                 <ItemForm getShoppingList={getShoppingList}/>
                 <Dashboard />
-                <ShoppingList shoppingList={shoppingList} />
+                <ShoppingList shoppingList={shoppingList}
+                                getShoppingList = {getShoppingList} />
                 <p>Under Construction...</p>
             </main>
         </div>
