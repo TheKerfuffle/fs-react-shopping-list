@@ -3,6 +3,18 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 // TODO - Add routes here...
+router.get('/', (req, res) => {
+    let queryText = 'SELECT * FROM "shopping";';
+    pool.query(queryText)
+        .then((result) => {
+            res.send(result.rows);
+        })
+        .catch((err) => {
+            console.log(`Error making query ${queryText}`, err);
+            res.sendStatus(500);
+        });
+});
+
 router.post('/', (req, res) => {
     console.log(req.body);
     const name = req.body.name;
